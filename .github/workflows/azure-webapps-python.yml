@@ -9,6 +9,13 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: deploy-adcop-production
+  cancel-in-progress: false
+
+env:
+  APP_DIR: adcop_prototype/adcop_prototype
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,33 +28,36 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-          cache-dependency-path: requirements.txt
+          cache-dependency-path: ${{ env.APP_DIR }}/requirements.txt
 
-      - name: Install application dependencies
+      - name: Install dependencies (validation only)
+        working-directory: ${{ env.APP_DIR }}
         run: |
+          python -m venv .venv
+          source .venv/bin/activate
           python -m pip install --upgrade pip
-          python -m pip install --target=".python_packages/lib/site-packages" -r requirements.txt
+          python -m pip install -r requirements.txt
 
       - name: Validate Python source
+        working-directory: ${{ env.APP_DIR }}
         run: |
+          source .venv/bin/activate
           python -m compileall -q simulate.py adcop
-          PYTHONPATH=".python_packages/lib/site-packages" python -c "import simulate; assert not simulate.validate_graph()"
+          python -c "import simulate; assert not simulate.validate_graph()"
+
+      - name: Create deployment package
+        working-directory: ${{ env.APP_DIR }}
+        run: |
+          zip -r "$GITHUB_WORKSPACE/release.zip" . \
+            -x ".venv/*" ".git/*" "*/__pycache__/*" "__pycache__/*" \
+               "*.sqlite3*" ".env*" "*/.env*"
 
       - name: Upload deployment package
         uses: actions/upload-artifact@v4
         with:
           name: adcop-python-app
-          path: |
-            .
-            !.git/**
-            !.github/**
-            !.venv/**
-            !venv/**
-            !**/__pycache__/**
-            !**/*.sqlite3*
-            !.env*
-            !**/.env*
-          include-hidden-files: true
+          path: release.zip
+          if-no-files-found: error
 
   deploy:
     runs-on: ubuntu-latest
@@ -69,5 +79,5 @@ jobs:
         with:
           app-name: ${{ vars.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: .
+          package: release.zip
           startup-command: bash startup.sh
