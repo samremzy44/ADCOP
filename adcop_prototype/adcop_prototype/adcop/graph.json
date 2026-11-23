@@ -1,0 +1,21 @@
+{"_note":"DRAFT prerequisite graph. Edges MUST be reviewed by a CAPS maths specialist before any pilot.",
+"nodes":[
+{"id":"G4_FRAC_CONCEPT","title":"Understanding fractions","grade":4,"parents":[]},
+{"id":"G4_MULT_TABLES","title":"Multiplication facts","grade":4,"parents":[]},
+{"id":"G5_FRAC_EQUIV","title":"Equivalent fractions","grade":5,"parents":["G4_FRAC_CONCEPT","G4_MULT_TABLES"]},
+{"id":"G5_LCM_FACTORS","title":"Multiples, factors and LCM","grade":5,"parents":["G4_MULT_TABLES"]},
+{"id":"G6_FRAC_ADD","title":"Adding fractions (common denominators)","grade":6,"parents":["G5_FRAC_EQUIV","G5_LCM_FACTORS"]},
+{"id":"G6_FRAC_MULT","title":"Multiplying fractions","grade":6,"parents":["G5_FRAC_EQUIV"]},
+{"id":"G6_DECIMALS","title":"Decimal operations","grade":6,"parents":["G5_FRAC_EQUIV"]},
+{"id":"G7_INTEGERS","title":"Integer operations","grade":7,"parents":["G4_MULT_TABLES"]},
+{"id":"G7_RATIO","title":"Ratio and proportion","grade":7,"parents":["G6_FRAC_MULT"]},
+{"id":"G7_ORDER_OPS","title":"Order of operations","grade":7,"parents":["G7_INTEGERS"]},
+{"id":"G7_ALG_EXPR","title":"Simplifying algebraic expressions","grade":7,"parents":["G7_ORDER_OPS","G7_INTEGERS"]},
+{"id":"G8_EXPONENTS","title":"Exponent laws","grade":8,"parents":["G7_INTEGERS"]},
+{"id":"G8_LIN_EQ","title":"Solving linear equations","grade":8,"parents":["G7_ALG_EXPR"]},
+{"id":"G8_FACTORISE","title":"Factorising trinomials","grade":8,"parents":["G7_ALG_EXPR","G5_LCM_FACTORS"]},
+{"id":"G9_LIN_EQ_FRAC","title":"Equations with fractions","grade":9,"parents":["G8_LIN_EQ","G6_FRAC_ADD"]},
+{"id":"G9_ALG_FRAC","title":"Algebraic fractions","grade":9,"parents":["G7_ALG_EXPR","G6_FRAC_ADD"]},
+{"id":"G9_QUADRATIC","title":"Quadratic equations","grade":9,"parents":["G8_FACTORISE","G8_EXPONENTS"]},
+{"id":"G9_FUNCTIONS","title":"Linear functions and graphs","grade":9,"parents":["G8_LIN_EQ","G7_RATIO"]}
+]}

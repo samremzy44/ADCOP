@@ -1,0 +1,257 @@
+{
+ "_note": "PLACEHOLDER: 1 item/node. Pilot needs 3-4 reviewed items per node; slip/guess to be calibrated from data.",
+ "items": [
+  {
+   "id": "G4_FRAC_CONCEPT_1",
+   "node": "G4_FRAC_CONCEPT",
+   "q": "Which fraction is the largest?",
+   "options": [
+    "1/8",
+    "1/4",
+    "1/2",
+    "1/3"
+   ],
+   "correct": 3,
+   "slip": 0.1,
+   "guess": 0.25
+  },
+  {
+   "id": "G4_MULT_TABLES_1",
+   "node": "G4_MULT_TABLES",
+   "q": "7 × 8 =",
+   "options": [
+    "54",
+    "56",
+    "63",
+    "48"
+   ],
+   "correct": 2,
+   "slip": 0.1,
+   "guess": 0.25
+  },
+  {
+   "id": "G5_FRAC_EQUIV_1",
+   "node": "G5_FRAC_EQUIV",
+   "q": "Which fraction equals 2/3?",
+   "options": [
+    "4/6",
+    "3/4",
+    "2/6",
+    "4/9"
+   ],
+   "correct": 1,
+   "slip": 0.1,
+   "guess": 0.25
+  },
+  {
+   "id": "G5_LCM_FACTORS_1",
+   "node": "G5_LCM_FACTORS",
+   "q": "What is the lowest common multiple of 4 and 6?",
+   "options": [
+    "12",
+    "24",
+    "10",
+    "2"
+   ],
+   "correct": 1,
+   "slip": 0.1,
+   "guess": 0.25
+  },
+  {
+   "id": "G6_FRAC_ADD_1",
+   "node": "G6_FRAC_ADD",
+   "q": "1/3 + 1/2 =",
+   "options": [
+    "2/5",
+    "5/6",
+    "2/6",
+    "1/6"
+   ],
+   "correct": 2,
+   "slip": 0.1,
+   "guess": 0.25
+  },
+  {
+   "id": "G6_FRAC_MULT_1",
+   "node": "G6_FRAC_MULT",
+   "q": "2/3 × 3/4 =",
+   "options": [
+    "5/7",
+    "1/2",
+    "6/7",
+    "8/9"
+   ],
+   "correct": 2,
+   "slip": 0.1,
+   "guess": 0.25
+  },
+  {
+   "id": "G6_DECIMALS_1",
+   "node": "G6_DECIMALS",
+   "q": "0.5 + 0.25 =",
+   "options": [
+    "0.30",
+    "0.75",
+    "0.55",
+    "0.8"
+   ],
+   "correct": 2,
+   "slip": 0.1,
+   "guess": 0.25
+  },
+  {
+   "id": "G7_INTEGERS_1",
+   "node": "G7_INTEGERS",
+   "q": "-3 - (-5) =",
+   "options": [
+    "-8",
+    "2",
+    "-2",
+    "8"
+   ],
+   "correct": 2,
+   "slip": 0.1,
+   "guess": 0.25
+  },
+  {
+   "id": "G7_RATIO_1",
+   "node": "G7_RATIO",
+   "q": "Share R60 in the ratio 1:2. How much is the bigger share?",
+   "options": [
+    "R20",
+    "R30",
+    "R40",
+    "R45"
+   ],
+   "correct": 3,
+   "slip": 0.1,
+   "guess": 0.25
+  },
+  {
+   "id": "G7_ORDER_OPS_1",
+   "node": "G7_ORDER_OPS",
+   "q": "2 + 3 × 4 =",
+   "options": [
+    "20",
+    "14",
+    "24",
+    "9"
+   ],
+   "correct": 2,
+   "slip": 0.1,
+   "guess": 0.25
+  },
+  {
+   "id": "G7_ALG_EXPR_1",
+   "node": "G7_ALG_EXPR",
+   "q": "Simplify: 3x + 2x - x",
+   "options": [
+    "4x",
+    "5x",
+    "6x",
+    "4x²"
+   ],
+   "correct": 1,
+   "slip": 0.1,
+   "guess": 0.25
+  },
+  {
+   "id": "G8_EXPONENTS_1",
+   "node": "G8_EXPONENTS",
+   "q": "x³ × x² =",
+   "options": [
+    "x⁵",
+    "x⁶",
+    "2x⁵",
+    "x⁸"
+   ],
+   "correct": 1,
+   "slip": 0.1,
+   "guess": 0.25
+  },
+  {
+   "id": "G8_LIN_EQ_1",
+   "node": "G8_LIN_EQ",
+   "q": "Solve: 3x - 7 = 11",
+   "options": [
+    "x = 4",
+    "x = 6",
+    "x = 18",
+    "x = 4/3"
+   ],
+   "correct": 2,
+   "slip": 0.1,
+   "guess": 0.25
+  },
+  {
+   "id": "G8_FACTORISE_1",
+   "node": "G8_FACTORISE",
+   "q": "Factorise: x² + 5x + 6",
+   "options": [
+    "(x+2)(x+3)",
+    "(x+1)(x+6)",
+    "(x-2)(x-3)",
+    "(x+5)(x+1)"
+   ],
+   "correct": 1,
+   "slip": 0.1,
+   "guess": 0.25
+  },
+  {
+   "id": "G9_LIN_EQ_FRAC_1",
+   "node": "G9_LIN_EQ_FRAC",
+   "q": "Solve: (2y + 4)/3 = 6",
+   "options": [
+    "y = 7",
+    "y = 5",
+    "y = 11",
+    "y = 3"
+   ],
+   "correct": 1,
+   "slip": 0.1,
+   "guess": 0.25
+  },
+  {
+   "id": "G9_ALG_FRAC_1",
+   "node": "G9_ALG_FRAC",
+   "q": "Simplify: x/3 + x/2",
+   "options": [
+    "2x/5",
+    "5x/6",
+    "x²/6",
+    "2x/6"
+   ],
+   "correct": 2,
+   "slip": 0.1,
+   "guess": 0.25
+  },
+  {
+   "id": "G9_QUADRATIC_1",
+   "node": "G9_QUADRATIC",
+   "q": "Solve: x² - 5x + 6 = 0",
+   "options": [
+    "x = 2 or 3",
+    "x = -2 or -3",
+    "x = 1 or 6",
+    "x = -1 or -6"
+   ],
+   "correct": 1,
+   "slip": 0.1,
+   "guess": 0.25
+  },
+  {
+   "id": "G9_FUNCTIONS_1",
+   "node": "G9_FUNCTIONS",
+   "q": "y = 2x + 1. What is y when x = 3?",
+   "options": [
+    "5",
+    "7",
+    "6",
+    "9"
+   ],
+   "correct": 2,
+   "slip": 0.1,
+   "guess": 0.25
+  }
+ ]
+}

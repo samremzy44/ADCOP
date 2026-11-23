@@ -1,0 +1,26 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.893387,
+          -26.154982
+        ]
+      },
+      "properties": {
+        "name": "Johannes van der Merwe",
+        "birth_year": "1884",
+        "death_year": "1952",
+        "cemetery": "Brixton Cemetery",
+        "location": "Johannesburg, Gauteng",
+        "url": "https://example.org/record/1",
+        "gps_accuracy_m": 70.0,
+        "gps_source": "browser",
+        "gps_captured_at": "2026-11-21T15:02:54+00:00"
+      }
+    }
+  ]
+}
