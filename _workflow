@@ -46,6 +46,17 @@ jobs:
           python -c "import simulate; assert not simulate.validate_graph()"
 
       - name: Create deployment package
+
+      - name: Verify deployment package
+        run: |
+          echo "Checking deployment ZIP..."
+          unzip -l release.zip | head -40
+          unzip -l release.zip | grep -E 'simulate.py|requirements.txt|startup.sh'
+          unzip -l release.zip | grep -q 'simulate.py$' || {
+            echo "ERROR: simulate.py is missing from the ZIP root"
+            exit 1
+          }
+
         working-directory: ${{ env.APP_DIR }}
         run: |
           zip -r "$GITHUB_WORKSPACE/release.zip" . \
