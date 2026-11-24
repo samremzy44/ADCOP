@@ -80,4 +80,4 @@ jobs:
           app-name: ${{ vars.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
           package: release.zip
-          startup-command: bash startup.sh
+          
