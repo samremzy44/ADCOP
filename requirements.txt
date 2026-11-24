@@ -2,5 +2,5 @@ numpy
 fastapi
 uvicorn
 reportlab>=4.2,<5
-streamlit
+python-multipart
 httpx
