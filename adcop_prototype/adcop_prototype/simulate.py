@@ -1383,6 +1383,58 @@ def init_db():
                     print(f"Demo {role} account skipped: invalid username or password; password must contain at least 12 characters.")
                     continue
                 c.execute("INSERT INTO users(username,display_name,password_hash,role,grade,created_at) VALUES(?,?,?,?,?,?)",(username,name,hash_password(password),role,grade,now()))
+        
+        # Temporary administrator account recovery.
+        recovery_username = os.environ.get(
+            "ADCOP_ADMIN_RECOVERY_USERNAME", ""
+        ).strip().lower()
+        recovery_password = os.environ.get(
+            "ADCOP_ADMIN_RECOVERY_PASSWORD", ""
+        )
+
+        if recovery_username or recovery_password:
+            if not recovery_username or len(recovery_password) < 16:
+                raise RuntimeError(
+                    "Admin recovery requires a username and a password "
+                    "of at least 16 characters."
+                )
+
+            if not recovery_username.replace("_", "").isalnum():
+                raise RuntimeError("Invalid administrator username.")
+
+            existing = c.execute(
+                "SELECT id, role FROM users WHERE username=?",
+                (recovery_username,),
+            ).fetchone()
+
+            if existing and existing["role"] != "admin":
+                raise RuntimeError(
+                    "Recovery username already belongs to a non-admin account."
+                )
+
+            if existing:
+                c.execute(
+                    "UPDATE users SET password_hash=?, active=1 WHERE id=?",
+                    (hash_password(recovery_password), existing["id"]),
+                )
+                print("ADCOP administrator password successfully reset.")
+            else:
+                c.execute(
+                    """
+                    INSERT INTO users(
+                        username, display_name, password_hash,
+                        role, active, created_at
+                    ) VALUES (?, ?, ?, 'admin', 1, ?)
+                    """,
+                    (
+                        recovery_username,
+                        "ADCOP Administrator",
+                        hash_password(recovery_password),
+                        now(),
+                    ),
+                )
+                print("ADCOP administrator account successfully created.")
+
         current_concept_placeholders = ",".join("?" for _ in CURRENT_CONCEPT_IDS)
         c.execute(
             f"UPDATE questions SET active=0 WHERE concept_id NOT IN ({current_concept_placeholders})",
